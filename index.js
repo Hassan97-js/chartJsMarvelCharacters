@@ -109,7 +109,7 @@ function drawChart() {
         }
 
     });
-    setTimeout(function () { myChart.update(); }, 500);
+    setTimeout(function () { myChart.update(); }, 800);
 }
 
 drawChart();
