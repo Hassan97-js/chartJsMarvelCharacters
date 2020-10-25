@@ -63,9 +63,8 @@ function rgbToRgba(rgb, alpha = 1) {
 }
 
 /* drawChart function draws the chart */
+/* I used setTimeout here because I faced a little problem with rendering the chart after getting the api's values. It renders the chart only when I resize the browser! So setTimeout function calls the chart.js built-in update function every half second to upadate the chart. */
 function drawChart() {
-    /* I used setTimeout here because I faced a little problem with rendering the chart after getting the api's values. It renders the chart only when I resize the browser! So setTimeout function calls the chart.js built-in update function every half second to upadate the chart. */
-    setTimeout(function () { myChart.update(); }, 500);
     Chart.defaults.global.defaultFontFamily = "'Comic Neue', 'cursive'";
     const mydata = getAllCharacters();
     const ctx = document.getElementById('chart').getContext('2d');
@@ -110,6 +109,7 @@ function drawChart() {
         }
 
     });
+    setTimeout(function () { myChart.update(); }, 500);
 }
 
 drawChart();
